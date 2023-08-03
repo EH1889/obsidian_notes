@@ -1,0 +1,179 @@
+{
+  "main": {
+    "id": "f2228a05437f255d",
+    "type": "split",
+    "children": [
+      {
+        "id": "c96affab74c229c8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f425471527eb2b61",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "GIT.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4b1e0331946b7db3",
+    "type": "split",
+    "children": [
+      {
+        "id": "8c98ebb5e0194d41",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "31ee081e4a9756f0",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "3c6509e777878a93",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "154522b37443e109",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "31b2fe3fad115728",
+    "type": "split",
+    "children": [
+      {
+        "id": "8053afdbc1427099",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8f79208af65797cd",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "GIT.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "19cb2712a89de353",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "GIT.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "a40d475270c50e6a",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "793ccd01fbe6835e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "GIT.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "f425471527eb2b61",
+  "lastOpenFiles": [
+    "The Aeroplane.md",
+    "2023-08-01.md",
+    "GIT.md",
+    "IPtables.md",
+    "TCPdump.md",
+    "Me.md",
+    "SSH.md",
+    "SS.md",
+    "Mount.md",
+    "ISO.md",
+    "Mod %.md",
+    "Java.md",
+    "Process flow.md",
+    "Linux Logs.md",
+    "Daemon.md",
+    "Russian.md",
+    "Water.md",
+    "Log4j.md",
+    "Banner Grabbing.md",
+    "Process Control.md",
+    "Shell.md",
+    "Links.md",
+    "Disc Usage.md",
+    "$(( $1 % 4 )) -eq 0.md",
+    "Programming.md",
+    "Linux.md"
+  ]
+}
