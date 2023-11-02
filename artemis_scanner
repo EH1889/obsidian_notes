@@ -1,0 +1,116 @@
+#!/bin/bash  
+
+
+k=0
+quit=n
+dev_int=enp0s8 
+key=artemis
+
+
+pull_route(){
+for i in $(ip route list | awk '{print $1}')
+	do
+		k=$((k+1))
+       	echo $k")  $i"; 
+	done
+}
+
+advanced_opt(){
+echo "ATTEMIS"
+echo "advanced options"
+echo "F to flush tmp "
+echo "v for version "
+}
+
+
+while true; do
+echo -e "\n what option do you want? "
+echo " 1 = view subnets from ip route "
+echo " 2 = scan subnet from a ip route " 
+echo " 3 = add a subnet to $dev_int"
+echo " 4 = remove a subnet from the route table "
+echo " a for arp "
+echo " t for tmp dir listing "
+echo " r for tmp read context "
+echo -e " q to exit\n "
+read -sn1 option
+
+case $option in
+	q) break ;;
+	1) 
+	k=0
+	echo " " ls -la /tmp/artimus*
+	pull_route
+	k=0
+	;;
+	2) 
+	k=0
+	pull_route 
+	read -p "pick a number to scan: " next_scan
+	target=$(ip r | head -$next_scan | tail -1 | cut -d ' ' -f1)
+	nmap $target
+	k=0
+	echo ""
+	read -p "do you want to save? 7 " save3
+	if [ $save3 == 7 ]
+	then
+		file=$(echo $target | rev | cut -c 4- | rev)
+		nmap $target -o /tmp/artimus_$file
+	fi
+	k=0
+	;;
+	3) 
+	k=0
+	read -p "enter a subnet/CIDR " sub
+	test=$(ip route add $sub dev $dev_int)
+	k=0
+	;;
+	4)
+	k=0
+	pull_route 
+	read -p "which route to remove: " remove_route
+	rm_target=$(ip r | head -$remove_route | tail -1)
+	ip route del $rm_target
+	k=0
+	;;
+	a)
+	cat /proc/net/arp
+	;;
+	t)
+	ls -la /tmp/artimus*
+	;;
+	r)
+	echo "working:"
+	k=0
+	for i in $(ls /tmp | grep artimus)
+	do
+		k=$((k+1))
+		echo "$k) $i"
+	done
+	echo ""
+	echo "R for interaction"
+	k=0
+	;;
+	h)
+	advanced_opt
+	;;
+	v)
+	echo "version 0.1"
+	;;
+	F)
+	rm -rf /tmp/artimus* 
+	;;
+	R)
+	for i in $(ls /tmp | grep artimus)
+        do
+                k=$((k+1))
+                echo "$k) $i"
+        done
+	read -p " Select a option to cat " R_opt
+	r_file=$(ls /tmp | grep artimus | head -$R_opt | tail -1)
+	cat /tmp/$r_file
+	;;
+	*) echo -e "\nthis is not a correct option\n"
+	;;
+esac
+done
