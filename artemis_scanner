@@ -1,34 +1,34 @@
-L)
-	echo "LOG SMASH!"
+	I)
 	echo ""
-	cat /tmp/artemis_log_smash
+	echo "===== Isolated Host ====="
 	echo ""
-	for i in $(cat /tmp/artemis_log_smash)
-	do
-		echo "tsh-client $i one thing"
-	        echo "tsh-ciient $i two thing"	
-	done
-	;;
-	N)
-	echo " New target, some features may not work as the version that is in production cannot reach back. "
-	echo ""
-	cat /tmp/artemis_target_list
+	for i in $(ls /tmp/artemis_node)
+        do
+                k=$((k+1))
+                echo "$k) $i"
+        done
+	echo " "
+	read -p "Pick a Node by number " node_opt
+	node_line=$(ls /tmp/artemis_node | head -$node_opt | tail -1)
+	#cut out $rdr_ip
+	#cut out $rdr_node
+	tsh-clinet $rdr_ip /command/ "ip neigbor print detail" 
+       	echo ""
+	read -p "What is the isolated IP? " iso_ip
+	read -p "What is the RouterOS version? " iso_version
 	
-	read -p "Copy and paste a target here " new_target
-	echo ""
-	echo "try this " 
-	echo "tsh-client $new_target"
-	echo ""
-	read -p "Is it a new target? y|n " cont
-	if [ $cont == y ]
-	then
-	echo ""
-        tracepath $new_target
-	echo ""
-	nmap -p 21,22,23,80 $new_target
-	echo "$new_target" >> /tmp/artemis_log_smash
-	echo ""
-	echo "Insert Version Function "
-	read -p "Press Enter to continue"
-	fi
+	echo "Drop this on your $rdr_node "	
+
+	echo "Drop this on your root node "
+
+	echo "config" >> proxychains_${iso_ip}.conf
+
+	proxychains4 -f /etc/proxychains_${iso_ip}cof $iso_ip
 	;;
+
+f2(){
+f1 "$test_var"
+var3="$($var2+1)"
+echo $var3
+
+}
